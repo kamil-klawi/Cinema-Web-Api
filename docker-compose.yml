@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  cinema.database:
+    container_name: cinema.database
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=cinema
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/cinema-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - cinema-network
+
+networks:
+  cinema-network:
+    driver: bridge
