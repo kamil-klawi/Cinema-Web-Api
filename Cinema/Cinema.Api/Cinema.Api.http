@@ -1,0 +1,8 @@
+@host = http://localhost
+@port = 5001
+@Cinema.Api_HostAddress = {{host}}:{{port}}
+
+GET {{Cinema.Api_HostAddress}}/api/cinema/
+Accept: application/json
+
+###
